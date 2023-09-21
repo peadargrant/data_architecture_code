@@ -115,18 +115,10 @@ Installation Log: C:\Users\grantp\AppData\Local\Temp\install-postgresql.log
 	Open a New PowerShell window.
 
 \item
-	Type \texttt{psql -u postgres}.
+	Type \texttt{createuser -s -P -U postgres your-windows-username-here}.
 	
 \item
 	Enter the superuser password you stored earlier.
-	
-\item 
-	Type the command:\\
-	\texttt{CREATE USER your-windows-username-here WITH SUPERUSER PASSWORD 'mypassword';}\\
-	replacing your-windows-username-here with your username, and mypassword with your choice of password e.g.:\\
-	\texttt{CREATE USER grantp WITH SUPERUSER PASSWORD 'mypassword';}\\
-	and press Enter.
-	PostgreSQL should reply \texttt{CREATE ROLE}.
 
 \item
 	Type Ctrl-C to quit.
