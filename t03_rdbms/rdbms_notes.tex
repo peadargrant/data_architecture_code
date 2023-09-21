@@ -103,9 +103,21 @@ For each table, one of its candidate keys is selected as the \textbf{primary key
 This is normally encoded explicitly by DML in the database.
 
 
+\subsection{Foreign key}
+
+The foreign key is one of the most powerful mechanisms in relational databases.
+It allows us to explicitly encode the idea of a table being linked to another.
+
+A foreign key defined on a column points to a column (usually the primary key) of another table.
+
+The RDBMS enforces the constraint that a value in the foreign key column must exist in the referenced table.
+We will meet foreign keys again when we set up multi-table databases.
+
+
+
 \section{Defining characteristics}
 
-Codd's paper defines a number of characteristics that a relational database must possess.
+Codd's Seminal paper defines a number of characteristics that a relational database must possess.
 
 \subsection{Foundation rule}
   For any system that is advertised as, or claimed to be, a relational database management system, that system must be able to manage databases entirely through its relational capabilities.
@@ -130,7 +142,7 @@ Codd's paper defines a number of characteristics that a relational database must
   \item Data manipulation (interactive and by program).
   \item Integrity constraints.
   \item Authorization.
-  \item Transaction boundaries (begin, commit and rollback).
+  \item Transaction boundaries (begin, commit and rollback). \textit{We will meet transactions again later on.}
   \end{enumerate}
 
 \subsection{View updating rule}
