@@ -115,31 +115,28 @@ Installation Log: C:\Users\grantp\AppData\Local\Temp\install-postgresql.log
 	Open a New PowerShell window.
 
 \item
-	Type \texttt{createuser -s -P -U postgres your-windows-username-here}.
-	
-\item
-	Enter the superuser password you stored earlier.
-
-\item
-	Type Ctrl-C to quit.
-	Then type just:
-	\texttt{psql}
-	and enter your PostgreSQL password.
-	You should see an error like:
+  Type:
 \begin{verbatim}
-psql: error: connection to server at "localhost" (::1),
-port 5432 failed: FATAL:  database "grantp" does not exist
+createuser -s -P -U postgres your-windows-username-here
 \end{verbatim}
-	PostgreSQL expects a database by default to exist with the same name as the user.
+  and press Enter. 
+  Enter the superuser password you stored earlier.
 
 \item
-	Type \texttt{createdb your-windows-username-here}, e.g.
-	\texttt{createdb grantp}.
+  Now we need to create a default database for your user.
+  To do this, type:
+\begin{verbatim}
+createdb your-windows-username-here
+\end{verbatim}
 	
 \item 
-	Now try \texttt{psql} again, enter your password and you should be connected to your database.
-	To confirm type \texttt{SELECT 1;} and press enter.
-	You should see something like:
+  Now try \texttt{psql} again, enter your password and you should be connected to your database.
+  To confirm everything is working we can type
+\begin{verbatim}
+SELECT 1;
+\end{verbatim}
+  and press enter.
+  You should see something like:
 \begin{verbatim}
  ?column?
 ----------
