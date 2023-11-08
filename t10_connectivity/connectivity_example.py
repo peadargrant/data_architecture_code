@@ -23,12 +23,12 @@ cur.execute(query)
 print("number of regions: %s" % cur.rowcount)
 
 # Loop over each row
-for row in cur.fetchall():
+for row in cur:
 
     # Access by column name in dict
     print("%s. %s" % (row['id'], row['name']))
 
-# optional: rewind the cursor
+# optional: rewind the cursor (if we want to use it again)
 cur.scroll(0, 'absolute')
     
 # Close the cursor and connection
