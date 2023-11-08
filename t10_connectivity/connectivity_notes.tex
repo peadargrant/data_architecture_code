@@ -76,66 +76,6 @@ cur.execute(query, parameters )
 \end{minted}
 
 
-% \section{PANDAS integration}
-% \label{sec:pandas-integration}
-
-% You are familiar with the use of
-% \href{https://pandas.pydata.org/}{Pandas} for statistical tasks. PANDAS
-% can be combined with relational databases to read the output of queries.
-
-% \subsection{Dataframe from query}\label{sec:dataframe-from-query}
-
-% \begin{Shaded}
-% \begin{Highlighting}[]
-% \CommentTok{# psycopg2 needed for connection}
-% \ImportTok{import} \NormalTok{psycopg }\ImportTok{as} \NormalTok{pg}
-% \NormalTok{conn }\OperatorTok{=} \NormalTok{pg.}\ExtensionTok{connect}\NormalTok{(database}\OperatorTok{=}\StringTok{"yourname"}\NormalTok{, user}\OperatorTok{=}\StringTok{"yourusername"}\NormalTok{, password}\OperatorTok{=}\StringTok{"yourdbpw"}\NormalTok{)}
-
-% \CommentTok{# import pandas }
-% \ImportTok{import} \NormalTok{pandas }\ImportTok{as} \NormalTok{pd}
-
-% \CommentTok{# retrieve a query as a pandas data frame}
-% \NormalTok{tasks }\OperatorTok{=} \NormalTok{pd.read_sql_query(}\StringTok{'SELECT * FROM tasks'}\NormalTok{,conn)}
-
-% \CommentTok{# use tasks like any other pandas dataframe}
-% \end{Highlighting}
-% \end{Shaded}
-
-% \section{Exercise}\label{exercise}
-
-% \begin{enumerate}
-% \def\labelenumi{\arabic{enumi}.}
-% \item
-%   Construct a task manager (tasks, projects) {[} datatypes, null/not
-%   null, keys, foreign keys, domains + enumerated types {]} for yourself.
-%   (Alternatives: expense tracker, sports score, track exercise -
-%   anything with *2* or more tables.) Set up the tables using psql.
-% \item
-%   If you haven't already, set a password using psql's
-%   \texttt{\textbackslash{}password}.
-% \item
-%   Write Python program (in nano, emacs, vim) to:
-
-%   \begin{enumerate}
-%   \def\labelenumii{\arabic{enumii}.}
-%   \item
-%     Allow user to create either a new task or a new project
-%   \item
-%     If a new project, get the name \& then exit.
-%   \item
-%     If a new task, display list of projects.
-%   \item
-%     Ask user to choose which project new project task belongs to.
-%   \item
-%     Ask user name of new task.
-%   \item
-%     Then ask to save or not. If yes, commit, if not, rollback.
-%   \end{enumerate}
-% \item
-%   Write another Python program to display a query using Pandas (for
-%   example a VIEW showing tasks and their projects JOINed).
-% \end{enumerate}
-
 \section{Lab exercise}
 
 \begin{enumerate}
@@ -189,5 +129,50 @@ number of departments: 4
 
 \end{enumerate}
   
+
+\section{PANDAS integration}
+\label{sec:pandas-integration}
+
+You are familiar with the use of
+\href{https://pandas.pydata.org/}{Pandas} for statistical tasks. PANDAS
+can be combined with relational databases to read the output of queries.
+
+\subsection{Dataframe from query}\label{sec:dataframe-from-query}
+
+\inputminted{python}{dataframe_from_query.py}
+
+\section{Exercise}\label{exercise}
+
+\begin{enumerate}
+\item
+  Construct a task manager (tasks, projects) {[} datatypes, null/not
+  null, keys, foreign keys, domains + enumerated types {]} for yourself.
+  (Alternatives: expense tracker, sports score, track exercise -
+  anything with *2* or more tables.) Set up the tables using psql.
+\item
+  If you haven't already, set a password using psql's
+  \texttt{\textbackslash{}password}.
+\item
+  Write Python program (in nano, emacs, vim) to:
+
+  \begin{enumerate}
+  \def\labelenumii{\arabic{enumii}.}
+  \item
+    Allow user to create either a new task or a new project
+  \item
+    If a new project, get the name \& then exit.
+  \item
+    If a new task, display list of projects.
+  \item
+    Ask user to choose which project new project task belongs to.
+  \item
+    Ask user name of new task.
+  \item
+    Then ask to save or not. If yes, commit, if not, rollback.
+  \end{enumerate}
+\item
+  Write another Python program to display a query using Pandas (for
+  example a VIEW showing tasks and their projects JOINed).
+\end{enumerate}
 
 
